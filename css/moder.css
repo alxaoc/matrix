@@ -1,0 +1,278 @@
+/* Shared styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Courier New', Courier, monospace;
+    background: none;
+    color: #00ff00;
+    overflow-y: auto; /* Додано для вертикального прокручування */
+    height: 100%;
+}
+
+header {
+    text-align: center;
+    padding: 20px 10px;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+header h1 {
+    font-size: 2em;
+    margin: 0;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    color: #00ff00;
+    text-decoration: none;
+    font-size: 1.2em;
+    transition: color 0.3s ease-in-out;
+}
+
+nav ul li a:hover, nav ul li a.active {
+    color: #00ff99;
+}
+
+main {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    height: auto; /* Забезпечуємо, щоб висота була адаптивною */
+    padding: 20px;
+    gap: 20px;
+    min-height: calc(100vh - 120px); /* Висота має бути мінімум на всю висоту екрану */
+    overflow-y: auto; /* Додано прокручування для main */
+}
+
+/* Footer */
+footer {
+    position: relative;
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+    background: rgba(0, 0, 0, 0.5);
+    color: #00ff00;
+    font-size: 0.9em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+footer input[type="text"] {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #00ff00;
+    background: black;
+    color: #00ff00;
+}
+
+footer button {
+    padding: 10px 20px;
+    margin-left: 10px;
+    border: none;
+    background: #00ff00;
+    color: black;
+    cursor: pointer;
+}
+
+footer button:hover {
+    background: #008f00;
+}
+
+/* Chat Area */
+.chat-area {
+    width: 50%;
+    height: auto; /* Забезпечуємо адаптивність висоти */
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    margin-right: 20px; /* Відстань між текстовим полем і візиткою */
+    max-height: 100vh; /* Максимальна висота */
+    overflow-y: auto; /* Прокручування, якщо контент переповнює */
+}
+
+.chat-window {
+    min-height: 300px; /* Мінімальна висота */
+    max-height: 700px; /* Максимальна висота */
+    padding: 10px;
+    overflow-y: auto;
+    background: rgba(0, 0, 0, 0.5);
+    border: 1px solid #00ff00;
+    flex: 1;
+    height: auto;
+}
+
+.chat-window .message {
+    margin: 10px 0;
+}
+
+.chat-window .user-message {
+    text-align: right;
+    color: #00ff00;
+}
+
+.chat-window .moderator-message {
+    text-align: left;
+    color: #8fbc8f;
+}
+
+/* Moderator Info */
+.moderator-info {
+    width: 50%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: auto; /* Адаптивна висота */
+    max-height: 100vh; /* Максимальна висота для інфо */
+    overflow-y: auto; /* Прокручування */
+}
+
+.moderator-info .logo img {
+    max-width: 100px;
+    margin-bottom: 20px;
+}
+
+.moderator-info h2 {
+    font-size: 1.8em;
+    margin: 0 0 10px;
+}
+
+.moderator-info p {
+    font-size: 1em;
+    line-height: 1.5;
+}
+
+
+/* Cards (Visitky) */
+.visiting-cards-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    margin-top: 30px;
+    width: 100%;
+    max-width: 1000px;
+    flex-wrap: wrap; /* Додаємо обтікання карток */
+}
+
+.visiting-card {
+    flex: 1;
+    background-color: rgba(0, 0, 0, 0.5);  /* Напівпрозорий чорний фон */
+    color: #00ff00;  /* Зелене письмо */
+    padding: 20px;
+    border: 1px solid #00ff00;  /* Зелений бордер */
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    height: 300px; /* Фіксована висота картки */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.visiting-card h3 {
+    margin-bottom: 15px;
+    font-size: 22px;
+    color: #00ff00; /* Зелене письмо для заголовків */
+}
+
+.visiting-card p {
+    font-size: 16px;
+    margin-bottom: 15px;
+    flex-grow: 1;  /* Динамічна висота */
+    color: #00ff00; /* Зелене письмо для тексту */
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Адаптивність для планшетів */
+@media (max-width: 1024px) {
+    main {
+        flex-wrap: wrap;
+        padding: 10px;
+        gap: 10px;
+        height: auto;
+    }
+
+    .chat-area, .moderator-info {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .visiting-cards-container {
+        flex-wrap: wrap;
+        gap: 15px;
+        justify-content: center;
+    }
+
+    .visiting-card {
+        width: 100%;
+        max-width: 450px;
+        margin-bottom: 20px;
+    }
+
+    footer {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    footer input[type="text"] {
+        margin-bottom: 10px;
+    }
+}
+
+/* Адаптивність для мобільних */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 1.5em;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    main {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .chat-area,
+    .moderator-info {
+        width: 100%;
+        margin-bottom: 20px;
+        height: auto;
+    }
+
+    footer {
+        flex-direction: column;
+    }
+
+    footer input[type="text"] {
+        margin-bottom: 10px;
+    }
+
+    .moderator-info .logo img {
+        max-width: 100px;
+    }
+
+    .visiting-card h3 {
+        font-size: 1.2em;
+    }
+
+    .visiting-card p {
+        font-size: 0.9em;
+    }
+}
