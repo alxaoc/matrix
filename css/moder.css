@@ -105,7 +105,7 @@ footer button:hover {
 
 .chat-window {
     min-height: 300px; /* Мінімальна висота */
-    max-height: 700px; /* Максимальна висота */
+    max-height: 600px; /* Максимальна висота */
     padding: 10px;
     overflow-y: auto;
     background: rgba(0, 0, 0, 0.5);
