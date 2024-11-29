@@ -1,8 +1,8 @@
 // Функція для відправки запиту до сервера
 async function sendMessage() {
-    const inputField = document.getElementById('userInput'); // Виправлено ID
-    const message = inputField.value.trim();
-    const chatWindow = document.querySelector('.chat-window'); // Використовуємо клас замість ID
+    const inputField = document.getElementById('userInput'); // Поле введення
+    const message = inputField.value.trim(); // Отримання тексту
+    const chatWindow = document.querySelector('.chat-window'); // Вікно чату
 
     if (!message) {
         return; // Не відправляти порожні повідомлення
@@ -19,7 +19,7 @@ async function sendMessage() {
 
     try {
         // Відправка повідомлення на сервер
-        const response = await fetch('/api/chat', {
+        const response = await fetch('http://localhost:3000/chat', { // Оновлено маршрут
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -32,7 +32,7 @@ async function sendMessage() {
         }
 
         const data = await response.json();
-        const reply = data.reply || 'Модератор не зміг відповісти';
+        const reply = data.response || 'Модератор не зміг відповісти'; // Зміна на 'response'
 
         // Додати відповідь модератора до чату
         addMessageToChat('moderator', reply);
@@ -44,7 +44,7 @@ async function sendMessage() {
 
 // Додавання повідомлення до чату
 function addMessageToChat(sender, text) {
-    const chatWindow = document.querySelector('.chat-window'); // Використовуємо клас замість ID
+    const chatWindow = document.querySelector('.chat-window'); // Вікно чату
     const messageElement = document.createElement('div');
     messageElement.className = `message ${sender}`;
     messageElement.textContent = text;
@@ -64,7 +64,7 @@ document.getElementById('sendButton').addEventListener('click', sendMessage);
 // Обробка події натискання Enter у полі вводу
 document.getElementById('userInput').addEventListener('keypress', function (e) {
     if (e.key === 'Enter') {
-        e.preventDefault(); // Запобігає стандартній поведінці (відправка форми)
+        e.preventDefault(); // Запобігає стандартній поведінці
         sendMessage();
     }
 });
