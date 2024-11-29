@@ -74,13 +74,25 @@ footer input[type="text"] {
     flex: 1;
     padding: 10px;
     border: 1px solid #00ff00;
+    border-radius: 7px;
     background: black;
+    color: #00ff00;
+    transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+footer input[type="text"]:focus,
+footer input[type="text"]:active {
+    outline: none;
+    border: 2px solid #00ff00;
+    box-shadow: 0 0 10px #00ff00;
+    background-color: black;
     color: #00ff00;
 }
 
 footer button {
     padding: 10px 20px;
     margin-left: 10px;
+    border-radius: 7px;
     border: none;
     background: #00ff00;
     color: black;
@@ -107,6 +119,7 @@ footer button:hover {
     min-height: 300px; /* Мінімальна висота */
     max-height: 600px; /* Максимальна висота */
     padding: 10px;
+    border-radius: 10px;
     overflow-y: auto;
     background: rgba(0, 0, 0, 0.5);
     border: 1px solid #00ff00;
@@ -154,7 +167,6 @@ footer button:hover {
     font-size: 1em;
     line-height: 1.5;
 }
-
 
 /* Cards (Visitky) */
 .visiting-cards-container {
@@ -229,6 +241,20 @@ footer button:hover {
 
     footer input[type="text"] {
         margin-bottom: 10px;
+    }
+
+    footer button {
+        padding: 10px 20px;
+        margin-left: 0;
+        border-radius: 7px;
+        border: none;
+        background: #00ff00;
+        color: black;
+        cursor: pointer;
+    }
+
+    footer button:hover {
+        background: #008f00;
     }
 }
 
