@@ -1,0 +1,87 @@
+/* terminal.css */
+
+/* Термінал */
+#terminal {
+    width: 95%;
+    min-height: 300px; /* Початкова висота */
+    max-height: 600px; /* Максимальна висота */
+    overflow-y: auto; /* Прокрутка, якщо перевищено max-height */
+    background-color: rgba(0, 0, 0, 0.5); /* Прозорий чорний фон */
+    border: 1px solid #00ff00;
+    border-radius: 10px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    margin: 20px auto;
+    transition: max-height 0.3s ease; /* Плавне розширення */
+}
+
+/* Вивід результатів */
+#output {
+    flex: 1;
+    overflow-y: auto;
+    margin-bottom: 10px;
+    padding-right: 5px; /* Зменшено правий відступ для уникнення обрізання */
+    text-align: left; /* Вирівнювання тексту по лівому краю */
+    word-wrap: break-word; /* Розрив слів для уникнення виходу за межі */
+    max-width: 100%; /* Ширина обмежена до 100%, щоб уникнути обрізання */
+    white-space: pre-wrap; /* Зберігає розриви рядків */
+}
+
+/* Лінія вводу */
+#input-line {
+    display: flex;
+    align-items: center;
+    position: relative;
+    border-top: 1px solid #00ff00; /* Лінія, що відокремлює ввід */
+    padding-top: 5px;
+}
+
+.prompt {
+    margin-right: 5px;
+    font-weight: bold;
+    color: #00ff00;
+}
+
+/* Поле вводу */
+#input {
+    background: none;
+    border: none;
+    color: #00ff00;
+    font: inherit;
+    outline: none;
+    flex: 1;
+    text-align: left; /* Текст вводиться з лівого краю */
+    padding-right: 5px; /* Відступ, щоб уникнути накладення */
+    caret-color: #00ff00; /* Курсор буде зеленим */
+}
+
+/* Прокрутка в стилі кіберпанку */
+#terminal::-webkit-scrollbar {
+    width: 10px;
+}
+
+#terminal::-webkit-scrollbar-thumb {
+    background: #00ff00;
+    border-radius: 5px;
+}
+
+#terminal::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.5);
+}
+
+
+
+/* Адаптивність для мобільних пристроїв */
+@media (max-width: 768px) {
+    #terminal {
+        width: 100%;
+        min-height: 200px; /* Менший термінал для мобільних */
+        max-height: 400px; /* Максимальна висота для мобільних */
+    }
+
+    #output {
+        padding-right: 10px;
+    }
+}
+
