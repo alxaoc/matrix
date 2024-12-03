@@ -50,7 +50,7 @@ ${availableCommands}
         description: "Learn about this terminal",
         action: () => `
 This is a simple terminal simulator built with HTML, CSS, and JavaScript.
-Author: Your Name
+Author: Alex MoToR
 Version: 1.0
         `
     },
