@@ -5,8 +5,10 @@ body, html {
     font-family: 'Courier New', Courier, monospace;
     background: none;
     color: #00ff00;
-    overflow: hidden;
-    height: 100%;
+    overflow: auto;
+    height: auto;
+    /*overflow: hidden;*/
+    /*height: 100%;*/
 }
 
 /* Matrix Rain Background */
@@ -92,6 +94,15 @@ footer {
     text-align: center; /* Вирівнює текст по правому краю */
     font-size: 20px; /* Збільшує розмір шрифта */
     font-style: italic; /* Робить шрифт наклоненим (курсив) */
+}
+
+.email-link {
+    color: green; /* Задаємо зелений колір для посилання */
+    text-decoration: none; /* Якщо не хочете підкреслення */
+}
+
+.email-link:hover {
+    color: darkgreen; /* Якщо хочете змінити колір при наведенні */
 }
 
 /* Responsive Design */
